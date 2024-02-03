@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Amazon";
+  src: url("./assets/AmazonUIFont.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Primary - 121212 */
+/* Secondary - F5C518 */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #181818;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f5c518;
+}
