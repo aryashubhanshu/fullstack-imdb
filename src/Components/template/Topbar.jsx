@@ -37,7 +37,7 @@ function Topnav() {
         ></i>
       )}
 
-      <div className="absolute ml-[10%] top-[100%] w-[50%] max-h-[50vh] bg-zinc-200 overflow-auto">
+      <div className="z-[99] absolute ml-[10%] top-[100%] w-[50%] max-h-[50vh] bg-zinc-200 overflow-auto">
         {searches.map((s, ind) => (
           <Link
             key={ind}

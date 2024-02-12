@@ -7,7 +7,7 @@ function Dropdown({ title, options, func }) {
         </option>
         {options.map((opt, ind) => (
           <option key={ind} value={opt}>
-            {opt.toUpperCase()}
+            {opt.charAt(0).toUpperCase() + opt.slice(1)}
           </option>
         ))}
       </select>

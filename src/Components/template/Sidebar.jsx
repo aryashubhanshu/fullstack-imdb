@@ -17,16 +17,28 @@ function Sidebar() {
         >
           <i className="ri-fire-fill mr-2"></i>Trending
         </Link>
-        <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
+        <Link
+          to={"/popular"}
+          className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg"
+        >
           <i className="ri-magic-fill mr-2"></i>Popular
         </Link>
-        <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
+        <Link
+          to={"/movies"}
+          className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg"
+        >
           <i className="ri-movie-2-fill mr-2"></i>Movies
         </Link>
-        <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
+        <Link
+          to={"/tvshows"}
+          className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg"
+        >
           <i className="ri-tv-2-fill mr-2"></i>TV Shows
         </Link>
-        <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
+        <Link
+          to={"/people"}
+          className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg"
+        >
           <i className="ri-team-fill mr-2"></i>People
         </Link>
       </nav>
@@ -37,10 +49,16 @@ function Sidebar() {
         <h1 className="text-white font-semibold text-xl mb-2">
           Website Information
         </h1>
-        <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
+        <Link
+          to={"/about"}
+          className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg"
+        >
           <i className="ri-information-fill mr-2"></i>About
         </Link>
-        <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
+        <Link
+          to={"/contact"}
+          className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg"
+        >
           <i className="ri-phone-fill mr-2"></i>Contact
         </Link>
       </nav>

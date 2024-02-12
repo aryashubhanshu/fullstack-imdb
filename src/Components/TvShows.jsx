@@ -4,28 +4,26 @@ import Topbar from "./template/Topbar";
 import Dropdown from "./template/Dropdown";
 import Loading from "./template/Loading";
 import axios from "../utils/axios";
-import Cards from "./template/Cards";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Cards from "./template/Cards";
 import LoadingSpin from "./template/LoadingSpin";
 
-function Trending() {
-  document.title = "IMDb | Trendings";
+function TvShows() {
+  document.title = "IMDb | TV Shows";
 
   const navigate = useNavigate();
-  const [category, setCategory] = useState("all");
-  const [duration, setDuration] = useState("day");
-  const [trending, setTrending] = useState([]);
+  const [category, setCategory] = useState("airing_today");
+  const [tv, setTv] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  const getTrending = async () => {
+  const getTv = async () => {
     try {
-      const { data } = await axios.get(
-        `/trending/${category}/${duration}?page=${page}`
-      );
+      const { data } = await axios.get(`/tv/${category}?page=${page}`);
+      console.log(data);
 
       if (data.results.length > 0) {
-        setTrending((prevState) => [...prevState, ...data.results]);
+        setTv((prevState) => [...prevState, ...data.results]);
         setPage((page) => page + 1);
       } else {
         setHasMore(false);
@@ -36,20 +34,20 @@ function Trending() {
   };
 
   const refreshHandler = () => {
-    if (trending.length === 0) {
-      getTrending();
+    if (tv.length === 0) {
+      getTv();
     } else {
       setPage(1);
-      setTrending([]);
-      getTrending();
+      setTv([]);
+      getTv();
     }
   };
 
   useEffect(() => {
     refreshHandler();
-  }, [category, duration]);
+  }, [category]);
 
-  return trending.length > 0 ? (
+  return tv.length > 0 ? (
     <div className="w-screen h-screen">
       <div className="px-[5%] w-full mb-5 flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-zinc-400">
@@ -57,32 +55,29 @@ function Trending() {
             onClick={() => navigate(-1)}
             className="ri-arrow-left-line hover:text-[#F5C518]"
           ></i>{" "}
-          Trending
+          TV Shows
+          <small className="ml-2 text-sm text-zinc-600">
+            ({category.charAt(0).toUpperCase() + category.slice(1)})
+          </small>
         </h1>
 
         <div className="flex items-center w-[80%]">
           <Topbar />
           <Dropdown
             title={"Category"}
-            options={["movie", "tv", "all"]}
+            options={["on_the_air", "popular", "top_rated", "airing_today"]}
             func={(e) => setCategory(e.target.value)}
-          />
-          <div className="w-[2%]"></div>
-          <Dropdown
-            title={"Duration"}
-            options={["week", "day"]}
-            func={(e) => setDuration(e.target.value)}
           />
         </div>
       </div>
 
       <InfiniteScroll
-        dataLength={trending.length}
+        dataLength={tv.length}
         loader={<LoadingSpin />}
-        next={getTrending}
+        next={getTv}
         hasMore={hasMore}
       >
-        <Cards data={trending} title={category} />
+        <Cards data={tv} title={category} />
       </InfiniteScroll>
     </div>
   ) : (
@@ -90,4 +85,4 @@ function Trending() {
   );
 }
 
-export default Trending;
+export default TvShows;
