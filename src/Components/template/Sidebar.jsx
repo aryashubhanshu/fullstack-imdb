@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 function Sidebar() {
   return (
-    <div className="w-[20%] h-full border-r border-zinc-400 p-10">
+    <div className="w-[20%] h-full border-r border-zinc-400 p-10 overflow-y-auto">
       <div className="mr-2">
         <Logo />
       </div>
@@ -28,10 +28,10 @@ function Sidebar() {
         </Link>
       </nav>
 
-      <hr className="border-none h-[1px] bg-zinc-400 my-3" />
+      <hr className="border-none h-[1px] bg-zinc-400 my-5" />
 
       <nav className="flex flex-col gap-3 text-zinc-400 text-xl">
-        <h1 className="text-white font-semibold text-xl mt-6 mb-2">
+        <h1 className="text-white font-semibold text-xl mb-2">
           Website Information
         </h1>
         <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
