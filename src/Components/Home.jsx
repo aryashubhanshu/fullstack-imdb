@@ -5,6 +5,7 @@ import axios from "../utils/axios";
 import Header from "./Header";
 import Dropdown from "./template/Dropdown";
 import HorizontalCards from "./template/HorizontalCards";
+import Loading from "./template/Loading";
 
 function Home() {
   document.title =
@@ -60,9 +61,7 @@ function Home() {
       </div>
     </>
   ) : (
-    <div className="w-full h-screen flex items-center justify-center text-5xl text-white">
-      Loading...
-    </div>
+    <Loading />
   );
 }
 

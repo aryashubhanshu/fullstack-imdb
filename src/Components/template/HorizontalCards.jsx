@@ -1,6 +1,6 @@
 function HorizontalCards({ data }) {
   return (
-    <div className="w-full flex overflow-y-hidden mb-5 p-5">
+    <div className="w-full h-[60vh] flex overflow-y-hidden mb-5 p-5">
       {data.map((d, ind) => (
         <div key={ind} className="min-w-[20%] mr-5 mb-5 bg-zinc-900">
           <img

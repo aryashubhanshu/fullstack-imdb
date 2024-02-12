@@ -11,7 +11,10 @@ function Sidebar() {
         <h1 className="text-white font-semibold text-xl mt-10 mb-2">
           New Feeds
         </h1>
-        <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
+        <Link
+          to={"/trending"}
+          className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg"
+        >
           <i className="ri-fire-fill mr-2"></i>Trending
         </Link>
         <Link className="hover:bg-[#F5C518] hover:text-black duration-300 p-2 rounded-lg">
