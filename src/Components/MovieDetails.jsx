@@ -29,9 +29,9 @@ function MovieDetails() {
   return info ? (
     <div
       style={{
-        background: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8), rgba(0,0,0,1)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path})`,
+        background: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9), rgba(0,0,0,1)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path})`,
         backgroundPosition: "center top",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
       }}
       className="relative w-screen h-[160vh] px-[5%]"

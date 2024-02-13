@@ -43,11 +43,9 @@ function Sidebar() {
         </Link>
       </nav>
 
-      <hr className="border-none h-[1px] bg-zinc-400 my-5" />
-
       <nav className="flex flex-col gap-3 text-zinc-400 text-xl">
-        <h1 className="text-white font-semibold text-xl mb-2">
-          Website Information
+        <h1 className="text-white font-semibold text-xl mt-10 mb-2">
+          Information
         </h1>
         <Link
           to={"/about"}
