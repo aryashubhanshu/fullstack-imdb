@@ -4,7 +4,12 @@ function Cards({ data, title }) {
   return (
     <div className="flex flex-wrap justify-center w-full h-full px-[5%] bg-[#121212]">
       {data.map((card, ind) => (
-        <Link className="relative w-[25vh] mr-[5%] mb-[5%]" key={ind}>
+        <Link
+          to={`/${card.media_type || title}/details/${card.id}}`}
+          className="relative w-[25vh] mr-[5%] mb-[5%]"
+          key={ind}
+        >
+          {console.log(`/${card.media_type || title}/details/${card.id}}`)}
           <img
             className="h-[40vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)]"
             src={`https://image.tmdb.org/t/p/original/${
