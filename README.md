@@ -2,7 +2,7 @@
 
 A Full-Stack React App
 
-The App is currently in making.
+Check out @https://imdb-thisisshubh.vercel.app/
 
 Functionalities added:
 
@@ -20,3 +20,6 @@ How to run locally?
 1. Clone the repository
 2. npm install
 3. npm run dev
+
+Glimpses
+<img width="1440" alt="Screenshot 2024-02-15 at 2 05 31 PM" src="https://github.com/aryashubhanshu/fullstack-imdb/assets/90999253/9b58259b-8456-47a4-b8e5-beb6aa200f71">
