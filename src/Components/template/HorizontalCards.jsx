@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import noimage from "/noimage.jpeg";
 
 function HorizontalCards({ data }) {
   return (
@@ -12,9 +13,13 @@ function HorizontalCards({ data }) {
           >
             <img
               className="w-full h-[55%] object-center object-cover"
-              src={`https://image.tmdb.org/t/p/original/${
+              src={
                 d.backdrop_path || d.poster_path
-              }`}
+                  ? `https://image.tmdb.org/t/p/original/${
+                      d.backdrop_path || d.poster_path
+                    }`
+                  : noimage
+              }
             />
 
             <div className="text-white p-3 h-[45%] overflow-y-auto">
